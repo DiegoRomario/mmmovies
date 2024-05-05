@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MMMovies.Movies.Data.Migrations
 {
     [DbContext(typeof(MovieDbContext))]
-    [Migration("20240504184737_Initial")]
+    [Migration("20240505175710_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

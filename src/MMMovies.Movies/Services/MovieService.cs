@@ -32,7 +32,7 @@ internal class MovieService(IMovieRepository movieRepository) : IMovieService
 
         // TODO: handle not found case
 
-        return new MovieDto(movie.Id, movie.Title, movie.Director, movie.Price);
+        return new MovieDto(movie!.Id, movie.Title, movie.Director, movie.Price);
     }
 
     public async Task<List<MovieDto>> GetMoviesAsync()

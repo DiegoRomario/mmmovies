@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using MMMovies.Movies.Domain;
 
-namespace MMMovies.Movies.Data.DbConfigs;
+namespace MMMovies.Movies.Data.DbConfigurations;
 
 internal class MovieConfiguration : IEntityTypeConfiguration<Movie>
 {

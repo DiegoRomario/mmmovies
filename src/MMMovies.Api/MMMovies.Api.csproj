@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MMMovies.Movies\MMMovies.Movies.csproj" />
+    <ProjectReference Include="..\MMMovies.SharedKernel\MMMovies.SharedKernel.csproj" />
+    <ProjectReference Include="..\MMMovies.Users\MMMovies.Users.csproj" />
   </ItemGroup>
 
 </Project>
