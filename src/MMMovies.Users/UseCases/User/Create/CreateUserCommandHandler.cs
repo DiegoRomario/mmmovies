@@ -1,6 +1,7 @@
 ﻿using Ardalis.Result;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using MMMovies.EmailSending.Contracts;
 using MMMovies.Users.Domain;
 
 namespace MMMovies.Users.UseCases.User.Create;
@@ -26,16 +27,16 @@ internal class CreateUserCommandHandler(UserManager<ApplicationUser> userManager
             return Result.Error(result.Errors.Select(e => e.Description).ToArray());
         }
 
-        //// send welcome email
-        //var sendEmailCommand = new SendEmailCommand
-        //{
-        //    To = command.Email,
-        //    From = "donotreply@test.com",
-        //    Subject = "Welcome to MMMovies!",
-        //    Body = "Thank you for registering."
-        //};
+        // send welcome email
+        var sendEmailCommand = new SendEmailCommand
+        {
+            To = command.Email,
+            From = "donotreply@test.com",
+            Subject = "Welcome to MMMovies!",
+            Body = "Thank you for registering."
+        };
 
-        //_ = await _mediator.Send(sendEmailCommand);
+        _ = await _mediator.Send(sendEmailCommand);
 
         return Result.Success();
     }

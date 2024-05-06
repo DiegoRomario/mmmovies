@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using MMMovies.Users.Contracts;
 using MMMovies.Users.Domain;
 
-namespace RiverBooks.Users.Integrations;
+namespace MMMovies.Users.Integrations;
 
 internal class UserAddressIntegrationEventDispatcherHandler(
   IMediator mediator,

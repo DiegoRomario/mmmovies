@@ -3,7 +3,7 @@ using MediatR;
 using MMMovies.Users.Contracts;
 using MMMovies.Users.UseCases.User.GetById;
 
-namespace RiverBooks.Users.Integrations;
+namespace MMMovies.Users.Integrations;
 
 internal class UserDetailsByIdHandler :
   IRequestHandler<UserDetailsByIdQuery, Result<UserDetails>>

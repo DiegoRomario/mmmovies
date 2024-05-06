@@ -3,7 +3,7 @@ using MediatR;
 using MMMovies.Users.Contracts;
 using MMMovies.Users.Data.Repositories;
 
-namespace RiverBooks.Users.Integrations;
+namespace MMMovies.Users.Integrations;
 internal class UserAddressDetailsByIdQueryHandler(IUserStreetAddressRepository addressRepo) : IRequestHandler<UserAddressDetailsByIdQuery, Result<UserAddressDetails>>
 {
     private readonly IUserStreetAddressRepository _addressRepo = addressRepo;

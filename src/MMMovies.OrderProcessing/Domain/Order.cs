@@ -9,10 +9,10 @@ internal class Order : IDomainEvents
     public Guid UserId { get; private set; }
     public Address ShippingAddress { get; private set; } = default!;
     public Address BillingAddress { get; private set; } = default!;
-    private readonly List<OrderItem> _orderItems = new();
+    private readonly List<OrderItem> _orderItems = [];
     public IReadOnlyCollection<OrderItem> OrderItems => _orderItems.AsReadOnly();
 
-    private List<DomainEventBase> _domainEvents = new();
+    private List<DomainEventBase> _domainEvents = [];
     [NotMapped]
     public IEnumerable<DomainEventBase> DomainEvents => _domainEvents.AsReadOnly();
 

@@ -1,43 +1,36 @@
-﻿//using MediatR;
-//using MMMovies.Users.Contracts;
+﻿using MediatR;
+using MMMovies.EmailSending.Contracts;
+using MMMovies.Users.Contracts;
 
-//namespace RiverBooks.OrderProcessing.Domain;
+namespace MMMovies.OrderProcessing.Domain;
 
-//internal class SendConfirmationEmailOrderCreatedEventHandler :
-//  INotificationHandler<OrderCreatedEvent>
-//{
-//    private readonly IMediator _mediator;
+internal class SendConfirmationEmailOrderCreatedEventHandler(IMediator mediator) : INotificationHandler<OrderCreatedEvent>
+{
+    private readonly IMediator _mediator = mediator;
 
-//    public SendConfirmationEmailOrderCreatedEventHandler(IMediator mediator)
-//    {
-//        _mediator = mediator;
-//    }
+    public async Task Handle(OrderCreatedEvent notification,
+      CancellationToken ct)
+    {
+        var userByIdQuery = new UserDetailsByIdQuery(notification.Order.UserId);
 
-//    public async Task Handle(OrderCreatedEvent notification,
-//      CancellationToken ct)
-//    {
-//        var userByIdQuery = new UserDetailsByIdQuery(notification.Order.UserId);
+        var result = await _mediator.Send(userByIdQuery);
 
-//        var result = await _mediator.Send(userByIdQuery);
+        if (!result.IsSuccess)
+        {
+            // TODO: Log the error
+            return;
+        }
+        string userEmail = result.Value.EmailAddress;
 
-//        if (!result.IsSuccess)
-//        {
-//            // TODO: Log the error
-//            return;
-//        }
-//        string userEmail = result.Value.EmailAddress;
-
-//        var command = new SendEmailCommand()
-//        {
-//            To = userEmail,
-//            From = "noreply@test.com",
-//            Subject = "Your RiverBooks Purchase",
-//            Body = $"You bought {notification.Order.OrderItems.Count} items."
-//        };
-//        Guid emailId = await _mediator.Send(command);
-
-//        // TODO: Do something with emailId
-
-//    }
-//}
+        var command = new SendEmailCommand()
+        {
+            To = userEmail,
+            From = "noreply@test.com",
+            Subject = "Your MMMovies Purchase",
+            Body = $"You bought {notification.Order.OrderItems.Count} items."
+        };
+        Guid emailId = await _mediator.Send(command, ct);
+        // TODO: Do something with emailId
+    }
+}
 

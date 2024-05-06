@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MMMovies.OrderProcessing.Data.Migrations
 {
     [DbContext(typeof(OrderProcessingDbContext))]
-    [Migration("20240506110949_Initial")]
+    [Migration("20240506115019_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -118,13 +118,13 @@ namespace MMMovies.OrderProcessing.Data.Migrations
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("BookId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<Guid>("MovieId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("OrderId")
                         .HasColumnType("uniqueidentifier");

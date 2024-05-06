@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MMMovies.EmailSending.Contracts\MMMovies.EmailSending.Contracts.csproj" />
     <ProjectReference Include="..\MMMovies.Movies.Contracts\MMMovies.Movies.Contracts.csproj" />
     <ProjectReference Include="..\MMMovies.OrderProcessing.Contracts\MMMovies.OrderProcessing.Contracts.csproj" />
     <ProjectReference Include="..\MMMovies.SharedKernel\MMMovies.SharedKernel.csproj" />
@@ -29,7 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Migrations\" />
     <Folder Include="Endpoints\Requests\" />
   </ItemGroup>
 
