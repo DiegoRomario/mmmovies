@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MMMovies.Movies.Contracts\MMMovies.Movies.Contracts.csproj" />
+    <ProjectReference Include="..\MMMovies.OrderProcessing.Contracts\MMMovies.OrderProcessing.Contracts.csproj" />
     <ProjectReference Include="..\MMMovies.SharedKernel\MMMovies.SharedKernel.csproj" />
     <ProjectReference Include="..\MMMovies.Users.Contracts\MMMovies.Users.Contracts.csproj" />
   </ItemGroup>
