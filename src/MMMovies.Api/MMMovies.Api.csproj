@@ -22,6 +22,7 @@
     <ProjectReference Include="..\MMMovies.EmailSending\MMMovies.EmailSending.csproj" />
     <ProjectReference Include="..\MMMovies.Movies\MMMovies.Movies.csproj" />
     <ProjectReference Include="..\MMMovies.OrderProcessing\MMMovies.OrderProcessing.csproj" />
+    <ProjectReference Include="..\MMMovies.Reporting\MMMovies.Reporting.csproj" />
     <ProjectReference Include="..\MMMovies.SharedKernel\MMMovies.SharedKernel.csproj" />
     <ProjectReference Include="..\MMMovies.Users\MMMovies.Users.csproj" />
   </ItemGroup>

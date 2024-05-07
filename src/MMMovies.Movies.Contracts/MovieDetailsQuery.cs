@@ -3,4 +3,4 @@ using MediatR;
 
 namespace MMMovies.Movies.Contracts;
 
-public record MovieDetailsQuery(Guid movieId) : IRequest<Result<MovieDetailsResponse>>;
+public record MovieDetailsQuery(Guid MovieId) : IRequest<Result<MovieDetailsResponse>>;

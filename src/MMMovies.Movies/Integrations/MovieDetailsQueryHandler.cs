@@ -11,7 +11,7 @@ internal class MovieDetailsQueryHandler(IMovieService movieService) : IRequestHa
 
     public async Task<Result<MovieDetailsResponse>> Handle(MovieDetailsQuery request, CancellationToken cancellationToken)
     {
-        var movie = await _movieService.GetMovieByIdAsync(request.movieId);
+        var movie = await _movieService.GetMovieByIdAsync(request.MovieId);
 
         if (movie is null) return Result.NotFound();
 

@@ -28,7 +28,7 @@ public class AddItemToCartHandler(IApplicationUserRepository userRepository, IMe
 
         var movieDetails = result.Value;
 
-        var description = $"{movieDetails.Title} by {movieDetails.Author}";
+        var description = $"{movieDetails.Title} by {movieDetails.Director}";
         var newCartItem = new CartItem(request.MovieId, description, request.Quantity, movieDetails.Price);
 
         user.AddItemToCart(newCartItem);

@@ -9,6 +9,7 @@ using MMMovies.Users;
 using MMMovies.Users.UseCases.Cart.AddItem;
 using MMMovies.OrderProcessing;
 using MMMovies.EmailSending;
+using MMMovies.Reporting;
 
 var logger = Log.Logger = new LoggerConfiguration().Enrich.FromLogContext()
                                                    .WriteTo.Console()
@@ -29,7 +30,7 @@ builder.Services.AddFastEndpoints()
 List<Assembly> mediatRAssemblies = [typeof(Program).Assembly];
 builder.Services.AddMovieModuleServices(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddEmailSendingModuleServices(builder.Configuration, logger, mediatRAssemblies);
-//builder.Services.AddReportingModuleServices(builder.Configuration, logger, mediatRAssemblies);
+builder.Services.AddReportingModuleServices(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddOrderProcessingModuleServices(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddUserModuleServices(builder.Configuration, logger, mediatRAssemblies);
 

@@ -26,15 +26,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMMovies.SharedKernel", "sr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrderProcessing", "OrderProcessing", "{90084AE5-A2FF-41D6-9FE9-52517844E5A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMMovies.OrderProcessing", "src\MMMovies.OrderProcessing\MMMovies.OrderProcessing.csproj", "{4D9BB806-36D5-43E9-9100-FE1E44C2DA8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMMovies.OrderProcessing", "src\MMMovies.OrderProcessing\MMMovies.OrderProcessing.csproj", "{4D9BB806-36D5-43E9-9100-FE1E44C2DA8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMMovies.OrderProcessing.Contracts", "src\MMMovies.OrderProcessing.Contracts\MMMovies.OrderProcessing.Contracts.csproj", "{24FF663A-06F4-4154-B379-6E7BBBBB0634}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMMovies.OrderProcessing.Contracts", "src\MMMovies.OrderProcessing.Contracts\MMMovies.OrderProcessing.Contracts.csproj", "{24FF663A-06F4-4154-B379-6E7BBBBB0634}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmailSending", "EmailSending", "{D2DCFA40-AFA6-47E0-B54F-294C94054FAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMMovies.EmailSending", "src\MMMovies.EmailSending\MMMovies.EmailSending.csproj", "{F2FF3C69-EE29-4389-A2E6-1EDDD8C4B4B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMMovies.EmailSending", "src\MMMovies.EmailSending\MMMovies.EmailSending.csproj", "{F2FF3C69-EE29-4389-A2E6-1EDDD8C4B4B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMMovies.EmailSending.Contracts", "src\MMMovies.EmailSending.Contracts\MMMovies.EmailSending.Contracts.csproj", "{0C73585F-5A42-41AA-987D-EFF69A718F04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMMovies.EmailSending.Contracts", "src\MMMovies.EmailSending.Contracts\MMMovies.EmailSending.Contracts.csproj", "{0C73585F-5A42-41AA-987D-EFF69A718F04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reporting", "Reporting", "{6DE2CCA2-707D-4400-AA58-3CC1E1D8E27D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMMovies.Reporting", "src\MMMovies.Reporting\MMMovies.Reporting.csproj", "{DEBE42C0-A766-4583-AD2F-86FA84194791}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,6 +86,10 @@ Global
 		{0C73585F-5A42-41AA-987D-EFF69A718F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C73585F-5A42-41AA-987D-EFF69A718F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C73585F-5A42-41AA-987D-EFF69A718F04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEBE42C0-A766-4583-AD2F-86FA84194791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEBE42C0-A766-4583-AD2F-86FA84194791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEBE42C0-A766-4583-AD2F-86FA84194791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEBE42C0-A766-4583-AD2F-86FA84194791}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,6 +104,7 @@ Global
 		{24FF663A-06F4-4154-B379-6E7BBBBB0634} = {90084AE5-A2FF-41D6-9FE9-52517844E5A9}
 		{F2FF3C69-EE29-4389-A2E6-1EDDD8C4B4B8} = {D2DCFA40-AFA6-47E0-B54F-294C94054FAC}
 		{0C73585F-5A42-41AA-987D-EFF69A718F04} = {D2DCFA40-AFA6-47E0-B54F-294C94054FAC}
+		{DEBE42C0-A766-4583-AD2F-86FA84194791} = {6DE2CCA2-707D-4400-AA58-3CC1E1D8E27D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F12F597C-04D5-42C1-9C12-AB4C14C2A41D}
