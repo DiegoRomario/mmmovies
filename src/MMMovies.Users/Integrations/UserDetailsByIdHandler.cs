@@ -5,15 +5,11 @@ using MMMovies.Users.UseCases.User.GetById;
 
 namespace MMMovies.Users.Integrations;
 
-internal class UserDetailsByIdHandler :
-  IRequestHandler<UserDetailsByIdQuery, Result<UserDetails>>
+internal class UserDetailsByIdHandler : IRequestHandler<UserDetailsByIdQuery, Result<UserDetails>>
 {
     private readonly IMediator _mediator;
 
-    public UserDetailsByIdHandler(IMediator mediator)
-    {
-        _mediator = mediator;
-    }
+    public UserDetailsByIdHandler(IMediator mediator) => _mediator = mediator;
 
     public async Task<Result<UserDetails>> Handle(UserDetailsByIdQuery request, CancellationToken cancellationToken)
     {

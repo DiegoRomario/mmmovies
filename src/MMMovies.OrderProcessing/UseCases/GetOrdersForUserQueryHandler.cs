@@ -5,9 +5,7 @@ using MMMovies.OrderProcessing.Endpoints.Responses;
 
 namespace MMMovies.OrderProcessing.UseCases;
 
-internal class GetOrdersForUserQueryHandler(IOrderRepository orderRepository) :
-  IRequestHandler<GetOrdersForUserQuery,
-  Result<List<OrderSummaryResponse>>>
+internal class GetOrdersForUserQueryHandler(IOrderRepository orderRepository) : IRequestHandler<GetOrdersForUserQuery, Result<List<OrderSummaryResponse>>>
 {
     private readonly IOrderRepository _orderRepository = orderRepository;
 
@@ -24,8 +22,7 @@ internal class GetOrdersForUserQueryHandler(IOrderRepository orderRepository) :
             OrderId = o.Id,
             UserId = o.UserId,
             Total = o.OrderItems.Sum(oi => oi.UnitPrice) // need to .Include OrderItems
-        })
-          .ToList();
+        }).ToList();
 
         return summaries;
     }

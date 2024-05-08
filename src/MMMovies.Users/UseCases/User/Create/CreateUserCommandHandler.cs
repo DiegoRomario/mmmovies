@@ -6,8 +6,7 @@ using MMMovies.Users.Domain;
 
 namespace MMMovies.Users.UseCases.User.Create;
 
-internal class CreateUserCommandHandler(UserManager<ApplicationUser> userManager,
-  IMediator mediator) : IRequestHandler<CreateUserCommand, Result>
+internal class CreateUserCommandHandler(UserManager<ApplicationUser> userManager, IMediator mediator) : IRequestHandler<CreateUserCommand, Result>
 {
     private readonly UserManager<ApplicationUser> _userManager = userManager;
     private readonly IMediator _mediator = mediator;
@@ -36,7 +35,7 @@ internal class CreateUserCommandHandler(UserManager<ApplicationUser> userManager
             Body = "Thank you for registering."
         };
 
-        _ = await _mediator.Send(sendEmailCommand);
+        _ = await _mediator.Send(sendEmailCommand, cancellationToken);
 
         return Result.Success();
     }

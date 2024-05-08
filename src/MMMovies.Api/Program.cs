@@ -28,19 +28,18 @@ builder.Services.AddFastEndpoints()
 
 // Add Module Services
 List<Assembly> mediatRAssemblies = [typeof(Program).Assembly];
+
 builder.Services.AddMovieModuleServices(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddEmailSendingModuleServices(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddReportingModuleServices(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddOrderProcessingModuleServices(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddUserModuleServices(builder.Configuration, logger, mediatRAssemblies);
 
-
 // Set up MediatR
 builder.Services.AddMediatR(config => config.RegisterServicesFromAssemblies([.. mediatRAssemblies]));
 builder.Services.AddMediatRLoggingBehavior();
 builder.Services.AddMediatRFluentValidationBehavior();
 builder.Services.AddValidatorsFromAssemblyContaining<AddItemToCartCommandValidator>();
-//Add MediatR Domain Event Dispatcher
 builder.Services.AddScoped<IDomainEventDispatcher, MediatRDomainEventDispatcher>();
 
 var app = builder.Build();

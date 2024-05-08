@@ -11,10 +11,7 @@ namespace MMMovies.Movies;
 
 public static class MovieServiceExtensions
 {
-    public static IServiceCollection AddMovieModuleServices(this IServiceCollection services,
-                                                           ConfigurationManager config,
-                                                           ILogger logger,
-                                                           List<Assembly> mediatRAssemblies)
+    public static IServiceCollection AddMovieModuleServices(this IServiceCollection services, ConfigurationManager config, ILogger logger, List<Assembly> mediatRAssemblies)
     {
         string? connectionString = config.GetConnectionString("MoviesConnectionString");
         services.AddDbContext<MovieDbContext>(options => options.UseSqlServer(connectionString));

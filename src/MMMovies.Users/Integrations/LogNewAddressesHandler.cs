@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using MMMovies.Users.Domain;
 
-namespace MMMovies.Users;
+namespace MMMovies.Users.Integrations;
 
 internal class LogNewAddressesHandler(ILogger<LogNewAddressesHandler> logger) : INotificationHandler<AddressAddedEvent>
 {

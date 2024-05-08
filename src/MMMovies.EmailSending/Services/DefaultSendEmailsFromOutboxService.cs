@@ -5,10 +5,7 @@ using MongoDB.Driver;
 
 namespace MMMovies.EmailSending.Services;
 
-internal class DefaultSendEmailsFromOutboxService(IGetEmailsFromOutboxService outboxService,
-  ISendEmail emailSender,
-  IMongoCollection<EmailOutbox> emailCollection,
-  ILogger<DefaultSendEmailsFromOutboxService> logger) : ISendEmailsFromOutboxService
+internal class DefaultSendEmailsFromOutboxService(IGetEmailsFromOutboxService outboxService, ISendEmail emailSender, IMongoCollection<EmailOutbox> emailCollection, ILogger<DefaultSendEmailsFromOutboxService> logger) : ISendEmailsFromOutboxService
 {
     private readonly IGetEmailsFromOutboxService _outboxService = outboxService;
     private readonly ISendEmail _emailSender = emailSender;

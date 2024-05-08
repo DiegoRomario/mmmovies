@@ -7,9 +7,7 @@ using MMMovies.Users.Contracts;
 
 namespace MMMovies.OrderProcessing.Integrations;
 
-internal class AddressCacheUpdatingNewUserAddressHandler(IOrderAddressCache addressCache,
-  ILogger<AddressCacheUpdatingNewUserAddressHandler> logger) :
-  INotificationHandler<NewUserAddressAddedIntegrationEvent>
+internal class AddressCacheUpdatingNewUserAddressHandler(IOrderAddressCache addressCache, ILogger<AddressCacheUpdatingNewUserAddressHandler> logger) : INotificationHandler<NewUserAddressAddedIntegrationEvent>
 {
     private readonly IOrderAddressCache _addressCache = addressCache;
     private readonly ILogger<AddressCacheUpdatingNewUserAddressHandler> _logger = logger;

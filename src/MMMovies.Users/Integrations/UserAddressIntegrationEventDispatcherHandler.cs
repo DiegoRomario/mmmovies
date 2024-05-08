@@ -5,10 +5,7 @@ using MMMovies.Users.Domain;
 
 namespace MMMovies.Users.Integrations;
 
-internal class UserAddressIntegrationEventDispatcherHandler(
-  IMediator mediator,
-  ILogger<UserAddressIntegrationEventDispatcherHandler> logger) :
-  INotificationHandler<AddressAddedEvent>
+internal class UserAddressIntegrationEventDispatcherHandler(IMediator mediator, ILogger<UserAddressIntegrationEventDispatcherHandler> logger) : INotificationHandler<AddressAddedEvent>
 {
     private readonly IMediator _mediator = mediator;
     private readonly ILogger<UserAddressIntegrationEventDispatcherHandler> _logger = logger;

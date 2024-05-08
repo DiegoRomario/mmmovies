@@ -1,6 +1,7 @@
 ﻿using Ardalis.Result;
 using MediatR;
 using MMMovies.Users.Data.Repositories;
+using MMMovies.Users.DTOs;
 
 namespace MMMovies.Users.UseCases.User.GetById;
 

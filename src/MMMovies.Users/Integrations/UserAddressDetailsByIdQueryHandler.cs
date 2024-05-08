@@ -8,9 +8,7 @@ internal class UserAddressDetailsByIdQueryHandler(IUserStreetAddressRepository a
 {
     private readonly IUserStreetAddressRepository _addressRepo = addressRepo;
 
-    public async Task<Result<UserAddressDetails>> Handle(
-    UserAddressDetailsByIdQuery request,
-    CancellationToken ct)
+    public async Task<Result<UserAddressDetails>> Handle(UserAddressDetailsByIdQuery request, CancellationToken ct)
     {
         var address = await _addressRepo.GetById(request.AddressId);
 
